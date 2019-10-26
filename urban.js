@@ -1,14 +1,32 @@
-var settings = {
+$(document).ready(function() {
+	var alcohol = "gin"
+
+var apiCall = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://the-cocktail-db.p.rapidapi.com/lookup.php?i=11007",
+	"url": "https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=" + alcohol,
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+		"x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
 		"x-rapidapi-key": "3b9ee90aaemsh39b75ecb88d5d4dp16a0edjsnee4dbbff852f"
 	}
 }
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
+$.ajax(apiCall).then(function(response) {
+	console.log(response.list.length);
+	
+	var results = response.list
+	var targetDiv = document.querySelector('.row')
+
+	for (let i = 0; i < 1; i++) {
+		console.log(results)
+		var defDiv = document.createElement("div")
+		defDiv.classList.add(["col", "s12", "m6"])		
+		defDiv.innerHTML = response.list[i].definition
+		targetDiv.appendChild(defDiv)
+	}
+
 });
+
+// function renderDefinition()
+})
