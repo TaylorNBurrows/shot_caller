@@ -13,25 +13,46 @@
 
 <body>
     <div class="container">
-        <h1>Random Drink</h1>
-        <button type="submit"><i class="fas fa-dice"></i> Generate Random Drink</button>
-        <div class="drink-image">
-            <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYYGCD_rjtGark8yQ_lorw6JnVW6fIOvDHdFeLYDIMlWqQDKdk&s">
-        </div>
-        <div class="drink-recipe">
-            <h3>Drink Recipe</h3>
-        </div>
 
-        <div class="row">
-            <h3>Did you Know?</h3>
+        <!-- Top row for Random Drink -->
+
+        <div class="row" id="header-row">
+            <div class="col s12">
+
+                <h1>Random Drink</h1>
+                <button type="submit" id="gen-random"><i class="fas fa-dice"></i> Generate Random Drink</button>
+                <br> <br>
+            </div>
         </div>
 
+        <div class="row" id="content-row">
+            <div class="col s4 teal" id="drink-info">
+                    <h3>Drink Recipe</h3>
+            </div>
 
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="urban.js"></script>
-    <script src="cocktail.js"></script>
+            <div class="col s4 red" id="drink-image">
+                    <h3>Drink Recipe</h3>
+            </div>
+
+            <div class="col s4 pink" id="drink-recipe">
+                <h3>Drink Recipe</h3>
+            </div>
+        </div>
+
+            <div class="row purple">
+                <div class="col s12">
+                    <h3>Did you Know?</h3>
+                </div>
+                <div class="col s12" id=def-drink>
+
+                </div>
+            </div>
+
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="urban.js"></script>
+        <script src="cocktail.js"></script>
 </body>
 
 </html>
