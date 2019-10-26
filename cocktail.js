@@ -28,3 +28,4 @@ $.ajax(random).done(function (response) {
 	console.log("random drink", response);
 
 });
+
