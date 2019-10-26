@@ -21,12 +21,11 @@ $.ajax(apiCall).then(function(response) {
 	for (let i = 0; i < 1; i++) {
 		console.log(results)
 		var defDiv = document.createElement("div")
-		defDiv.classList.add(["col", "s12", "m6"])		
+		defDiv.classList.add("col","s12", "m6","card-panel","grey","lighten-3")
 		defDiv.innerHTML = response.list[i].definition
 		targetDiv.appendChild(defDiv)
 	}
 
 });
 
-// function renderDefinition()
 })
