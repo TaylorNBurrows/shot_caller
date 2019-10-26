@@ -9,6 +9,8 @@ var settings = {
 	}
 }
 
+
+
 $.ajax(settings).done(function (response) {
 	console.log(response);
 });
@@ -24,8 +26,19 @@ var random = {
 	}
 }
 
+
+
+var generateRandom = document.getElementById("gen-random");
+
+generateRandom.addEventListener("click", function(){
 $.ajax(random).done(function (response) {
 	console.log("random drink", response);
 
+	var randomResult = response.drinks[0]
+	console.log(randomResult);
+
 });
+
+})
+
 
