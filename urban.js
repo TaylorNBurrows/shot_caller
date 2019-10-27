@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var alcohol = "gin"
+	var alcohol = document.querySelector('#drink-name')
 
 var apiCall = {
 	"async": true,
