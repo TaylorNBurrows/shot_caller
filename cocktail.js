@@ -105,3 +105,36 @@ function drinkRecipe(drinkResponse) {
 	recipeEl.appendChild(ingredientsEl);
 }
 
+<<<<<<< HEAD
+=======
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+
+var random = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://the-cocktail-db.p.rapidapi.com/random.php",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+		"x-rapidapi-key": "21a3e5fe32mshddebc68d758fa0bp1c1c55jsnc99c698f891b"
+	}
+}
+
+
+
+var generateRandom = document.getElementById("gen-random");
+
+generateRandom.addEventListener("click", function(){
+$.ajax(random).done(function (response) {
+	console.log("random drink", response);
+
+	var randomResult = response.drinks[0]
+	console.log(randomResult);
+
+});
+
+})
+
+>>>>>>> 1a9762fc4071071f66d1b9b9c98f4f4752a971ca
