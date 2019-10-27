@@ -8,6 +8,7 @@ var cardIndex;
 
 //This loops through the images in the modal
 for (i = 0; i < alcoholImg.length; i++) {
+	//when the user clicks an image in the modal, search for drinks made with that alcohol
 	$(alcoholImg[i]).on("click", function () {
 		alcoholId = this.id;
 		var settings = {
@@ -30,6 +31,7 @@ for (i = 0; i < alcoholImg.length; i++) {
 	})
 }
 
+//this lists out drinks made from selected alcohol
 function listDrinks(response) {
 	var drinkList = document.getElementById("drink-choices");
 	$(drinkList).empty();
@@ -46,17 +48,16 @@ function listDrinks(response) {
 	}
 }
 
-var drinkCard = document.querySelectorAll("#drink-choices");
-console.log(drinkCard);
-console.log(drinkCard.length);
-
+//this is listening for a click on one of the drink list cards
 $('div').on("click", ".drink", function (event) {
 	event.stopPropagation();
 	console.log(this.getAttribute("data-index"))
 	cardIndex = this.getAttribute("data-index");
+	//pass the value of the data index to the call recipe function
 	callRecipe(cardIndex);
 })
 
+//this renders the image of the current drink
 function drinkImg(response) {
 	console.log(response);
 	imageSource = response.drinks[0].strDrinkThumb;
@@ -64,16 +65,21 @@ function drinkImg(response) {
 	drinkImage.children[0].src = imageSource
 }
 
+//this is the heart of BYO drink page. It gets info on a drink by the drink id. It either gets a default or selected value
 function callRecipe(response) {
 	console.log(response)
+	//this is the default value
 	if (typeof response === 'object') {
 		console.log(typeof response)
 		drinkId = response.drinks[0].idDrink
 	}
+	//this is the user selected value
 	else if (typeof response === "string"){
 		console.log(typeof response);
 		drinkId = response;
 	}
+
+	//this is the api call to get all the info on a drink
 	var recipe = {
 		"async": true,
 		"crossDomain": true,
@@ -91,11 +97,14 @@ function callRecipe(response) {
 	});
 }
 
+//this takes info from the call recipe api call and renders it to the screen
 function drinkRecipe(drinkResponse) {
 	drinkArray = drinkResponse.drinks
 	var recipeEl = document.getElementById("instructions");
 	$(recipeEl).empty();
 	var ingredientsEl = document.createElement('div');
+
+	//this loop is looking for keys in the drink object and selecting the ones that contain strIngredient
 	var ingredientsArray = [];
 	drinkArray.forEach(drink => {
 		var keys = Object.keys(drink);
@@ -111,6 +120,8 @@ function drinkRecipe(drinkResponse) {
 		})
 
 	});
+
+	//this loop is looking for keys in the drink object and selecting the ones that contain strMeasure
 	var measureArray = [];
 	drinkArray.forEach(drink => {
 		var keys = Object.keys(drink);
@@ -126,6 +137,8 @@ function drinkRecipe(drinkResponse) {
 		})
 
 	});
+
+	//render out the different ingredients with their measures
 	var ingredientsTitle = document.createElement('h3')
 	ingredientsTitle.innerHTML = "Ingredients:"
 	ingredientsEl.append(ingredientsTitle);
