@@ -170,6 +170,10 @@ function drinkRecipe(drinkResponse) {
 	}
 
 	recipeEl.appendChild(ingredientsEl);
+	var glass = drinkResponse.drinks[0].strGlass;
+	var glassEl = document.createElement("p");
+	glassEl.innerText = "Measure: " + glass;
+	recipeEl.appendChild(glassEl);
 	var instructions = drinkResponse.drinks[0].strInstructions;
 	var instructionEl = document.createElement("div");
 	var instructionTitle = document.createElement("h3");
