@@ -75,17 +75,32 @@ function drinkRecipe(drinkResponse) {
 		})
 
 	});
+	var measureArray = [];
+	drinkArray.forEach(drink => {
+		var keys = Object.keys(drink);
+		keys = keys.filter(function (key) {
+			return key.indexOf("strMeasure") !== -1;
+		})
+		keys.forEach(function (key) {
+			var measure = drink[key]
+			if (measure) {
+				measureArray.push(measure);
+				console.log(measure);
+			}
+		})
+
+	});
 	var ingredientsTitle = document.createElement('h3')
 	ingredientsTitle.innerHTML = "Ingredients:"
 	ingredientsEl.append(ingredientsTitle);
 	console.log(ingredientsArray);
 	for (i = 0; i < ingredientsArray.length; i++) {
 		var ingredientsText = document.createElement("p");
-		ingredientsText.innerText = ingredientsArray[i];
+		ingredientsText.innerText = measureArray[i] + ingredientsArray[i];
 		console.log(ingredientsText)
 		ingredientsEl.appendChild(ingredientsText);
-
 	}
+
 	
 	recipeEl.appendChild(ingredientsEl);
 }
