@@ -25,8 +25,21 @@ generateRandom.addEventListener("click", function () {
 
         var drinkImg = document.querySelector("#drink-image");
         drinkImg.setAttribute("src", randomResult.strDrinkThumb)
+		
+		var randInstructionsDiv = document.querySelector("#random-instructions")
+		var randInstructionsTitle = document.createElement("h5")
+		randInstructionsTitle.textContent= "Instructions: "
+		var randInstructionsText = document.createElement("p")
+		randInstructionsText.textContent = randomResult.strInstructions
+		randInstructionsDiv.appendChild(randInstructionsTitle)
+		randInstructionsTitle.appendChild(randInstructionsText)
 
-
+		randomDrinkIngredients(randomResult)
 	});
 
 })
+
+function randomDrinkIngredients(randomDrink) {
+	var randomIngredientsArray = [];
+	
+}
