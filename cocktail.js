@@ -139,6 +139,8 @@ function drinkRecipe(drinkResponse) {
 	});
 
 	//render out the different ingredients with their measures
+	var drinkTitle = document.createElement('h3')
+	drinkTitle.innerText = drinkResponse.drinks[0].strDrink;
 	var ingredientsTitle = document.createElement('h3')
 	ingredientsTitle.innerHTML = "Ingredients:"
 	ingredientsEl.append(ingredientsTitle);
