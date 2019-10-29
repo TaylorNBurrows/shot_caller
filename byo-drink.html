@@ -10,18 +10,36 @@
         integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <title>Build Your Own Drink</title>
 </head>
+<nav>
+    <div class="nav-wrapper grey darken-3">
+        <a href="#" class="brand-logo center grey darken-3"> Build Your Own Drink</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down grey darken-3">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="byo-drink.html">Build Your Own</a></li>
+            <li><a href="random-drink.html">Random Drink</a></li>
+        </ul>
+    </div>
+</nav>
 
 <body>
     <div class="container">
         <div class="row">
             <div class="col s12">
-                <h1>Build Your Drink</h1>
+                <br>
+                <br>
+                <br>
             </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align modal-open btn modal-trigger waves-effect waves-light btn-large"
+                href="#alcohol"><i class="fas fa-cocktail"></i> Choose Your
+                Alcohol</div>
+        </div>
+
+        <div class="row">
             <div class="col s4">
                 <div class="drink-list">
-                    <!-- Modal Trigger -->
-                    <a class="modal-open waves-effect waves-light btn modal-trigger" href="#alcohol">Choose Your
-                        Alcohol</a>
+
 
                     <div id="alcohol" class="modal">
                         <div class="modal-content">
@@ -135,12 +153,12 @@
                                     </div>
                                 </div>
                                 <div class="col s4">
-                                        <div class="card-panel alcohol" style="width: 150px; padding: 0px; margin: 0px">
-                                                <img src="https://cdn.liquor.com/wp-content/uploads/liquor-2015/spirits/bottle_whiskey_square.jpg"
-                                                alt="Whiskey" style="width:150px" id="whiskey" class="modal-close">
-                                            <p>Whiskey</p>
-                                        </div>
+                                    <div class="card-panel alcohol" style="width: 150px; padding: 0px; margin: 0px">
+                                        <img src="https://cdn.liquor.com/wp-content/uploads/liquor-2015/spirits/bottle_whiskey_square.jpg"
+                                            alt="Whiskey" style="width:150px" id="whiskey" class="modal-close">
+                                        <p>Whiskey</p>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -148,8 +166,9 @@
 
                     </div>
                 </div>
-
             </div>
+
+
             <div class="col s4">
                 <div id="drink-image">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYYGCD_rjtGark8yQ_lorw6JnVW6fIOvDHdFeLYDIMlWqQDKdk&s"
@@ -173,15 +192,17 @@
                     <h3>Did you Know?</h3>
                 </div>
                 <div class="col s12" id=def-drink>
-
                 </div>
             </div>
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="script.js"></script>
-        <script src="urban.js"></script>
-        <script src="cocktail.js"></script>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+    <script src="urban.js"></script>
+    <script src="cocktail.js"></script>
+
 </body>
 
 </html>
