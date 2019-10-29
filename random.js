@@ -14,8 +14,6 @@ var generateRandom = document.getElementById("gen-random");
 generateRandom.addEventListener("click", function () {
 	$.ajax(random).done(function (response) {
 		var randomResult = response.drinks[0]
-		var drinkId = response.drinks[0].idDrink
-		console.log(drinkId)
         console.log(randomResult);
         
         //add drink title to the page
@@ -40,8 +38,3 @@ generateRandom.addEventListener("click", function () {
 	});
 
 })
-
-function randomDrinkIngredients(randomDrink) {
-	var randomIngredientsArray = [];
-	
-}
