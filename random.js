@@ -106,6 +106,5 @@ generateRandom.addEventListener("click", function () {
 		// randInstructionsTitle.appendChild(randInstructionsText)
 
 		// randomDrinkIngredients(randomResult)
-	});
-});
-
+	})
+})

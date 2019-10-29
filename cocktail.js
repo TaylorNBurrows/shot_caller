@@ -44,6 +44,7 @@ function listDrinks(response) {
 		console.log(drinkCard.getAttribute('data-index'))
 		var drinkText = document.createTextNode(drinkArray[i].strDrink);
 		drinkCard.appendChild(drinkText);
+		drinkCard.setAttribute("button-style", "inactive")
 		drinkList.appendChild(drinkCard);
 	}
 }
@@ -53,6 +54,23 @@ $('div').on("click", ".drink", function (event) {
 	event.stopPropagation();
 	console.log(this.getAttribute("data-index"))
 	cardIndex = this.getAttribute("data-index");
+	var cardEl = this;
+	console.log($(this).siblings())
+	var cardElAttr = this.getAttribute("button-style");
+	if (cardElAttr === "inactive"){
+		cardEl.setAttribute("button-style", "active")
+		cardEl.setAttribute("style", "background-color: teal")
+	}
+	else {
+		var cardArray = $(cardEl).siblings();
+		for(i=0; i < cardArray.length; i++){
+			console.log(cardArray[i])
+			cardArray[i].attr("button-style", "inactive")
+			cardArray[i].attr("style", "background-color: white")
+		}
+		
+	}
+	cardEl = this.setAttribute("button-style", "active")
 	//pass the value of the data index to the call recipe function
 	callRecipe(cardIndex);
 })
@@ -155,7 +173,7 @@ function drinkRecipe(drinkResponse) {
 	recipeEl.appendChild(ingredientsEl);
 	var glass = drinkResponse.drinks[0].strGlass;
 	var glassEl = document.createElement("p");
-	glassEl.innerText = "Measure: " + glass;
+	glassEl.innerText = "Serving Glass: " + glass;
 	recipeEl.appendChild(glassEl);
 	var instructions = drinkResponse.drinks[0].strInstructions;
 	var instructionEl = document.createElement("div");
