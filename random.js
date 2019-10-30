@@ -84,7 +84,7 @@ generateRandom.addEventListener("click", function () {
 			randomDrinksArr.length = 5
 		}
 		renderDrinks()
-		renderDefinition()
+		renderRandomDefinition()
 	})
 
 	
