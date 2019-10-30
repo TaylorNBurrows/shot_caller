@@ -62,7 +62,7 @@ $('div').on("click", ".drink", function (event) {
 	var cardElAttr = this.getAttribute("button-style");
 	if (cardElAttr === "inactive") {
 		cardEl.setAttribute("button-style", "active")
-		cardEl.setAttribute("style", "background-color: teal")
+		cardEl.setAttribute("style", "background-color: #FFBF00")
 		var cardArray = $(cardEl).siblings();
 		for (i = 0; i < cardArray.length; i++) {
 			console.log(cardArray[i])
