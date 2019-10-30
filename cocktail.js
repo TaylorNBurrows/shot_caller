@@ -57,20 +57,16 @@ $('div').on("click", ".drink", function (event) {
 	var cardEl = this;
 	console.log($(this).siblings())
 	var cardElAttr = this.getAttribute("button-style");
-	if (cardElAttr === "inactive"){
+	if (cardElAttr === "inactive") {
 		cardEl.setAttribute("button-style", "active")
 		cardEl.setAttribute("style", "background-color: teal")
-	}
-	else {
 		var cardArray = $(cardEl).siblings();
-		for(i=0; i < cardArray.length; i++){
+		for (i = 0; i < cardArray.length; i++) {
 			console.log(cardArray[i])
-			cardArray[i].attr("button-style", "inactive")
-			cardArray[i].attr("style", "background-color: white")
+			cardArray[i].setAttribute("button-style", "inactive")
+			cardArray[i].setAttribute("style", "background-color: white")
 		}
-		
 	}
-	cardEl = this.setAttribute("button-style", "active")
 	//pass the value of the data index to the call recipe function
 	callRecipe(cardIndex);
 })
@@ -92,7 +88,7 @@ function callRecipe(response) {
 		drinkId = response.drinks[0].idDrink
 	}
 	//this is the user selected value
-	else if (typeof response === "string"){
+	else if (typeof response === "string") {
 		console.log(typeof response);
 		drinkId = response;
 	}
