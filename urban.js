@@ -1,5 +1,5 @@
-$(document).ready(function() {
-	var alcohol = "whiskey"
+function renderDefinition(){
+	var alcohol = document.querySelector("#drink-name p").textContent
 
 var apiCall = {
 	"async": true,
@@ -17,15 +17,22 @@ $.ajax(apiCall).then(function(response) {
 	
 	var results = response.list
 	var targetDiv = document.querySelector('#def-drink')
+	
 
 	for (let i = 0; i < 1; i++) {
 		console.log(results)
+		
 		var defDiv = document.createElement("div")
+		$(targetDiv).empty();
+		var titleDiv = document.createElement("div")
+		var titleEl = document.createElement("h3")
 		defDiv.classList.add("card-panel","grey","lighten-3")
+		titleEl.textContent="Did you Know?"
 		defDiv.innerHTML = response.list[i].definition
+		targetDiv.appendChild(titleDiv)
+		titleDiv.appendChild(titleEl)
 		targetDiv.appendChild(defDiv)
 	}
 
 });
-
-})
+}
