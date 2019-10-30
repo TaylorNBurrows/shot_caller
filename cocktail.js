@@ -160,6 +160,7 @@ function drinkRecipe(drinkResponse) {
 	drinkTitle.innerText = drinkResponse.drinks[0].strDrink;
 	var ingredientsTitle = document.createElement('h3')
 	ingredientsTitle.innerHTML = "Ingredients:"
+	ingredientsTitle.setAttribute("style", "margin-top: 0px")
 	ingredientsEl.append(ingredientsTitle);
 	console.log(ingredientsArray);
 	for (i = 0; i < ingredientsArray.length; i++) {
