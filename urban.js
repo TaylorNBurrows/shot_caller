@@ -27,6 +27,7 @@ $.ajax(apiCall).then(function(response) {
 		var titleDiv = document.createElement("div")
 		var titleEl = document.createElement("h3")
 		defDiv.classList.add("card-panel","grey","lighten-3")
+		defDiv.setAttribute("style", "color:black")
 		titleEl.textContent="Did you Know?"
 		defDiv.innerHTML = response.list[i].definition
 		targetDiv.appendChild(titleDiv)
@@ -66,6 +67,7 @@ function renderBYODefinition(cardName) {
 			var titleDiv = document.createElement("div")
 			var titleEl = document.createElement("h3")
 			defDiv.classList.add("card-panel","grey","lighten-3")
+			defDiv.setAttribute("style", "color:black")
 			titleEl.textContent="Did you Know?"
 			defDiv.innerHTML = response.list[i].definition
 			targetDiv.appendChild(titleDiv)

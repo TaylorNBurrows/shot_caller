@@ -107,6 +107,7 @@ function renderDrinks() {
 		var drinkTitleText = document.createElement("p")
 		drinkTitleText.classList.add("card-panel", "grey", "lighten-3")
 		drinkTitleText.setAttribute("id", drink.strDrink)
+		drinkTitleText.setAttribute("style","color:black")
 		drinkTitleText.textContent = drink.strDrink
 		drinkNameDiv.append(drinkTitleText)
 
