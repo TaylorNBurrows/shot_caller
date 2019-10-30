@@ -7,6 +7,6 @@ body {
 
 color: black;
 height: 500px;
-overflow: scroll;
+overflow: hidden;
 }
 

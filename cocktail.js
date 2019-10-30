@@ -46,6 +46,7 @@ function listDrinks(response) {
 		drinkCard.appendChild(drinkText);
 		drinkCard.setAttribute("button-style", "inactive")
 		drinkList.appendChild(drinkCard);
+		drinkList.setAttribute("style", "overflow: scroll");
 	}
 }
 
