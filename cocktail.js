@@ -54,6 +54,9 @@ $('div').on("click", ".drink", function (event) {
 	event.stopPropagation();
 	console.log(this.getAttribute("data-index"))
 	cardIndex = this.getAttribute("data-index");
+	var cardText = this.innerText;
+	console.log(cardText)
+	renderBYODefinition(cardText);
 	var cardEl = this;
 	console.log($(this).siblings())
 	var cardElAttr = this.getAttribute("button-style");
