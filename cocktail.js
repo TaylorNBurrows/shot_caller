@@ -5,6 +5,7 @@ var drinkId;
 var drinkArray;
 var drinkImage = document.getElementById("drink-image");
 var cardIndex;
+var cardText;
 
 //This loops through the images in the modal
 for (i = 0; i < alcoholImg.length; i++) {
@@ -39,7 +40,7 @@ function listDrinks(response) {
 	console.log(drinkArray);
 	for (i = 0; i < drinkArray.length; i++) {
 		var drinkCard = document.createElement("div");
-		drinkCard.setAttribute("class", "card-panel drink");
+		drinkCard.setAttribute("class", "card-panel hoverable drink");
 		drinkCard.setAttribute("data-index", drinkArray[i].idDrink)
 		console.log(drinkCard.getAttribute('data-index'))
 		var drinkText = document.createTextNode(drinkArray[i].strDrink);
@@ -49,6 +50,7 @@ function listDrinks(response) {
 		drinkList.setAttribute("style", "overflow: scroll");
 	}
 }
+
 
 //this is listening for a click on one of the drink list cards
 $('div').on("click", ".drink", function (event) {
@@ -90,6 +92,8 @@ function callRecipe(response) {
 	if (typeof response === 'object') {
 		console.log(typeof response)
 		drinkId = response.drinks[0].idDrink
+		var nameofDrink = response.drinks[0].strDrink
+		renderBYODefinition(nameofDrink);
 	}
 	//this is the user selected value
 	else if (typeof response === "string") {
