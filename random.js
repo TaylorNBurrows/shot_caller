@@ -116,4 +116,3 @@ function renderDrinks() {
 		drinkImg.setAttribute("style", "height:400px; width:300px")
 	})
 }
-
