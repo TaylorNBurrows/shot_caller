@@ -79,10 +79,19 @@ $('div').on("click", ".drink", function (event) {
 
 //this renders the image of the current drink
 function drinkImg(response) {
-	console.log(response);
+	if (typeof response === 'object') {
+		console.log(response);
 	imageSource = response.drinks[0].strDrinkThumb;
 	console.log(drinkImage.children[0].src);
 	drinkImage.children[0].src = imageSource
+	}
+	//this is the user selected value
+	else if (typeof response === "string") {
+		console.log(typeof response);
+		console.log(response)
+		imageSource = response;
+		drinkImage.children[0].src = imageSource;
+	}
 }
 
 //this is the heart of BYO drink page. It gets info on a drink by the drink id. It either gets a default or selected value
