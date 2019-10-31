@@ -1,5 +1,5 @@
 function renderRandomDefinition(){
-	var alcohol = document.querySelector("#drink-name p").textContent
+	var alcohol = document.querySelector("#drink-name div").textContent
 
 var apiCall = {
 	"async": true,
