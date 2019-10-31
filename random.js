@@ -181,7 +181,6 @@ function renderDrinks() {
 		drinkTitleText.textContent = drink.strDrink
 		drinkNameDiv.append(drinkTitleText)
 		var drinkImg = document.querySelector("#drink-img");
-		var drinkImg = document.querySelector("#drink-image");
 		drinkImg.setAttribute("src", randomDrinksArr[0].strDrinkThumb)
 		drinkImg.setAttribute("style", "height:400px; width:300px")
 	})
