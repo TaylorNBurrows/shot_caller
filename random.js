@@ -82,7 +82,10 @@ generateRandom.addEventListener("click", function () {
 		randomDrinksArr.unshift(randomResult)
 		if (randomDrinksArr.length > 5) {
 			randomDrinksArr.length = 5
+			renderDrinks();
 		}
+		
+		console.log("random drinks array", randomDrinksArr)
 		renderDrinks()
 		renderRandomDefinition()
 	})
@@ -112,7 +115,7 @@ function renderDrinks() {
 		drinkNameDiv.append(drinkTitleText)
 
 		var drinkImg = document.querySelector("#drink-image");
-		drinkImg.setAttribute("src", drink.strDrinkThumb)
+		drinkImg.setAttribute("src", randomDrinksArr[0].strDrinkThumb)
 		drinkImg.setAttribute("style", "height:400px; width:300px")
 	})
 }
