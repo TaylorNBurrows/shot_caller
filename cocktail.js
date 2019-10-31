@@ -35,6 +35,7 @@ for (i = 0; i < alcoholImg.length; i++) {
 //this lists out drinks made from selected alcohol
 function listDrinks(response) {
 	var drinkList = document.getElementById("drink-choices");
+	console.log(drinkList)
 	$(drinkList).empty();
 	drinkArray = response.drinks;
 	console.log(drinkArray);
