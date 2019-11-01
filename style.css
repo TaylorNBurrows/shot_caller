@@ -4,9 +4,15 @@ body {
 }
 
 #drink-choices {
-
-color: black;
-height: 500px;
-overflow: hidden;
+    color: black;
+    height: 500px;
 }
 
+.active{
+    background-color: #FFBF00;
+    color: black
+}
+
+.card-panel{
+    color: black
+}

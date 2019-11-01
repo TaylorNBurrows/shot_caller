@@ -8,7 +8,7 @@ var random = {
 		"x-rapidapi-key": "21a3e5fe32mshddebc68d758fa0bp1c1c55jsnc99c698f891b"
 	}
 }
-
+var cardArray;
 var generateRandom = document.getElementById("gen-random");
 var randomDrinksArr = []
 function randomRecipe() {
@@ -160,7 +160,7 @@ generateRandom.addEventListener("click", function () {
 			randomDrinksArr.length = 5
 			renderDrinks();
 		}
-		
+
 		console.log("random drinks array", randomDrinksArr)
 		renderDrinks()
 		renderRandomDefinition()
@@ -170,20 +170,23 @@ generateRandom.addEventListener("click", function () {
 
 function renderDrinks() {
 	var drinkNameDiv = document.querySelector("#drink-name")
-	drinkNameDiv.innerHTML = ''
+	$(drinkNameDiv).empty();
 	randomDrinksArr.forEach(function (drink) {
-
 		console.log(randomDrinksArr.length)
 		var drinkTitleText = document.createElement("div")
-		drinkTitleText.classList.add("card-panel", "grey", "lighten-3", "drink")
+		drinkTitleText.classList.add("card-panel", "grey", "lighten-3", "drink2")
 		drinkTitleText.setAttribute("id", drink.idDrink)
-		drinkTitleText.setAttribute("style", "color:black")
+		drinkTitleText.setAttribute("style", "color: black")
+		drinkTitleText.setAttribute("button-style", "inactive")
 		drinkTitleText.textContent = drink.strDrink
 		drinkNameDiv.append(drinkTitleText)
 		var drinkImg = document.querySelector("#drink-img");
 		drinkImg.setAttribute("src", randomDrinksArr[0].strDrinkThumb)
-		drinkImg.setAttribute("style", "height:400px; width:300px")
+		drinkImg.setAttribute("style", "width: 100%")
+
 	})
+	var drinkCards = document.querySelectorAll(".drink2")
+	drinkCards[0].setAttribute("style", "background-color: #FFBF00")
 }
 
 // function callRecipe(response) {
@@ -209,10 +212,31 @@ function renderDrinks() {
 // 	});
 // }
 
+function resetColor() {
+	var cardList = document.querySelectorAll(".drink2");
+	console.log(cardList)
+	for (i = 0; i < cardList.length; i++) {
+		console.log(cardList[i])
+		cardList[i].attributes[3].value = "inactive";
+		cardList[i].attributes[2].value = "background-color: white; color: black"
+	}
+}
 
-$("div").on("click", ".drink", function (event) {
-	event.stopPropagation()
-	console.log(this.getAttribute("id"));
-	var clickDrinkID = this.getAttribute("id")
-	callRecipe(clickDrinkID)
+$("div").on("click", ".drink2", function (event) {
+		event.stopPropagation()
+		resetColor();
+		var cardSiblings = this;
+		var cardSiblingVal = this.getAttribute("button-style")
+		console.log(cardSiblings.getAttribute("button-style"))
+		console.log(this.getAttribute("id"));
+		var clickDrinkID = this.getAttribute("id");
+		if (cardSiblingVal === "inactive") {
+			cardSiblings.setAttribute("button-style", "active") 
+			cardSiblings.setAttribute("style", "background-color: #FFBF00; color: black")
+			cardSiblings.classList.remove("grey", "lighten-3") 
+		}
+	
+
+
+	callRecipe(clickDrinkID);
 })
