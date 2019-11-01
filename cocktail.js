@@ -50,41 +50,46 @@ function listDrinks(response) {
 		drinkList.appendChild(drinkCard);
 		drinkList.setAttribute("style", "overflow: scroll");
 	}
+	var drinkCards = document.querySelectorAll(".drink")
+	drinkCards[0].setAttribute("style", "background-color: #FFBF00")
 }
 
 
 //this is listening for a click on one of the drink list cards
 $('div').on("click", ".drink", function (event) {
-	event.stopPropagation();
-	console.log(this.getAttribute("data-index"))
-	cardIndex = this.getAttribute("data-index");
-	var cardText = this.innerText;
-	console.log(cardText)
-	renderBYODefinition(cardText);
-	var cardEl = this;
-	console.log($(this).siblings())
-	var cardElAttr = this.getAttribute("button-style");
-	if (cardElAttr === "inactive") {
-		cardEl.setAttribute("button-style", "active")
-		cardEl.setAttribute("style", "background-color: #FFBF00")
-		var cardArray = $(cardEl).siblings();
-		for (i = 0; i < cardArray.length; i++) {
-			console.log(cardArray[i])
-			cardArray[i].setAttribute("button-style", "inactive")
-			cardArray[i].setAttribute("style", "background-color: white")
+	if (window.location.href.indexOf("byo-drink.html") > 0) {
+		event.stopPropagation();
+		console.log(this.getAttribute("data-index"))
+		cardIndex = this.getAttribute("data-index");
+		var cardText = this.innerText;
+		console.log(cardText)
+		renderBYODefinition(cardText);
+		var cardEl = this;
+		console.log($(this).siblings())
+		var cardElAttr = this.getAttribute("button-style");
+		if (cardElAttr === "inactive") {
+			cardEl.setAttribute("button-style", "active")
+			cardEl.setAttribute("style", "background-color: #FFBF00")
+			var cardArray = $(cardEl).siblings();
+			for (i = 0; i < cardArray.length; i++) {
+				console.log(cardArray[i])
+				cardArray[i].setAttribute("button-style", "inactive")
+				cardArray[i].setAttribute("style", "background-color: white")
+			}
 		}
+		//pass the value of the data index to the call recipe function
+		callRecipe(cardIndex);
 	}
-	//pass the value of the data index to the call recipe function
-	callRecipe(cardIndex);
 })
+
 
 //this renders the image of the current drink
 function drinkImg(response) {
 	if (typeof response === 'object') {
 		console.log(response);
-	imageSource = response.drinks[0].strDrinkThumb;
-	console.log(drinkImage.children[0].src);
-	drinkImage.children[0].src = imageSource
+		imageSource = response.drinks[0].strDrinkThumb;
+		console.log(drinkImage.children[0].src);
+		drinkImage.children[0].src = imageSource
 	}
 	//this is the user selected value
 	else if (typeof response === "string") {
