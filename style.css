@@ -1,6 +1,7 @@
 body {
     background-color: black;
     color: white;
+    font-family: 'Prompt', sans-serif;
 }
 
 #drink-choices {
@@ -16,3 +17,4 @@ body {
 .card-panel{
     color: black
 }
+
