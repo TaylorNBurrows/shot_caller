@@ -1,4 +1,4 @@
-# Shot_Caller
+# Shot Caller
 An application for creating creative cocktails and recipes for drinks created. 
 
 Are you thirsty and don’t know where to turn? 
@@ -8,3 +8,13 @@ When you choose your booze, you call all the shots.
 
 
 ## Main Features
+1/ Build your own drink
+2/ Random Drink Generator
+3/ Urban Dictionary Description
+4/ Age validation - must be over 21
+
+
+### User Story
+AS A consumer of alcoholic beverages, I WANT to have a website that provides a one stop shop for creative and fun drink ideas. SO THAT I never run out of ideas for new drinks to serve. 
+
+
