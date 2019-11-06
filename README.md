@@ -14,7 +14,7 @@ When you choose your booze, you call all the shots.
 4/ Age validation - must be over 21
 
 
-### User Story
+## User Story
 AS A consumer of alcoholic beverages, I WANT to have a website that provides a one stop shop for creative and fun drink ideas. SO THAT I never run out of ideas for new drinks to serve. 
 
 
